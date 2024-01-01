@@ -2,8 +2,9 @@ import Employee from './components/Employee';
 //useState para ipasa ang data gamit onChange method
 import { useState } from 'react';
 //uuid universal unique identifier id
-import {v4 as uuidv4} from 'uuid';
- 
+import { v4 as uuidv4 } from 'uuid';
+import AddEmployee from './components/AddEmployee';
+
 
 function App() {
   console.log("DATA");
@@ -64,32 +65,41 @@ function App() {
     ]
   );
 
-  //update 
+  //updateEmployeeFunction 
   function updateEmployee(id, newName, newRole) {
     const updatedEmployees = employees.map((employee) => {
-      if(id == employee.id){
+      if (id == employee.id) {
         //new employee
-        return {...employee, name: newName, role: newRole}
+        return { ...employee, name: newName, role: newRole }
       }
       return employee;
     });
     setEmployees(updatedEmployees);
   }
 
+  //AddNewEmployeeFunction 
+  function newEmployee(name, role, img) {
+    const newEmployee = {
+      id: uuidv4,
+      name: name,
+      role: role,
+      img: img,
+    };
+    setEmployees([...employees, newEmployee])
+  };
+
   return (
     <div className="App">
       {console.log('inside return', ShowEmployees)}
       {ShowEmployees ? (
         <div>
-
-
-   
           <div className="flex flex-wrap">
-          <input type="text" onChange={(e) => {
+
+            {/*
+               <input type="text" onChange={(e) => {
             console.log(e.target.value);
             setRole(e.target.value);
           }} />
-          {/*
             <Employee className="mx-2" key="1" name="M4rk" role="tig lung-ag" />
             <Employee key="2" name="MartinGarrix" role="DJ" />
             <Employee key="3" name="Marshmello" role={role} />
@@ -106,20 +116,20 @@ function App() {
               console.log(employee);
               console.log("UUIUD DATA", uuidv4());
               return (
-                <div  className="mx-auto"> {/* Center each Employee */}
+                <div className="mx-auto"> {/* Center each Employee */}
                   <Employee
                     key={employee.id}
                     id={employee.id}
                     name={employee.name}
                     role={employee.role}
                     img={employee.img}
-                    updateEmployee={updateEmployee} 
+                    updateEmployee={updateEmployee}
                   />
                 </div>
               );
             })}
-       
           </div>
+          <AddEmployee newEmployee={newEmployee} />
 
         </div>
       ) : (
