@@ -15,7 +15,7 @@ function AddEmployee(props) {
 
     return (
         <>
-            <button onClick={handleShow} className="block mx-auto  shadow bg-purple-600 hover:bg-purple-800 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded">+ Add Employee</button>
+            <button onClick={handleShow} className="block mx-auto shadow bg-purple-600 hover:bg-purple-800 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-2 mt-2 rounded">+ Add Employee</button>
             <Modal
                 show={show}
                 onHide={handleClose}
@@ -32,6 +32,9 @@ function AddEmployee(props) {
                             e.preventDefault();
                             console.log('hello from edit Employee');
                             console.log(props.id, name, role);
+                            setName('');
+                            setRole('');
+                            setImg('');
                             props.newEmployee(name, role, img);
                         }}
                         id='editemployeemodal'

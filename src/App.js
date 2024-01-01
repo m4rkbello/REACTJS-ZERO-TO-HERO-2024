@@ -79,8 +79,14 @@ function App() {
 
   //AddNewEmployeeFunction 
   function newEmployee(name, role, img) {
+
+    const lastId = employees.length > 0 ? employees[employees.length - 1].id : 0;
+    //parse
+    const newId = lastId + 1;
+
+  
     const newEmployee = {
-      id: uuidv4,
+      id: newId,
       name: name,
       role: role,
       img: img,
