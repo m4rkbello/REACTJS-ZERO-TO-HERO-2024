@@ -25,7 +25,15 @@ function EditEmployee(props) {
                 </Modal.Header>
                 <Modal.Body>
 
-                    <form id='editemployeemodal' className="w-full max-w-sm">
+                    <form 
+                        onSubmit={(e) => {
+                            e.preventDefault();
+                            console.log('hello from edit Employee');
+                            console.log(props.id, name, role)
+                            props.updateEmployee(props.id, name, role);
+                        }}
+                        id='editemployeemodal'
+                        className="w-full max-w-sm">
                         <div className="md:flex md:items-center mb-6">
                             <div className="md:w-1/3">
                                 <label className="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="Fullname">
@@ -66,7 +74,7 @@ function EditEmployee(props) {
                         Close
                     </button>
                     <button form="editemployeemodal" className="shadow bg-purple-600 hover:bg-purple-800 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded">
-                        Submit
+                        Update
                     </button>
 
                 </Modal.Footer>

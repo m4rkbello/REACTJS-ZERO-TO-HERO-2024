@@ -64,6 +64,18 @@ function App() {
     ]
   );
 
+  //update 
+  function updateEmployee(id, newName, newRole) {
+    const updatedEmployees = employees.map((employee) => {
+      if(id == employee.id){
+        //new employee
+        return {...employee, name: newName, role: newRole}
+      }
+      return employee;
+    });
+    setEmployees(updatedEmployees);
+  }
+
   return (
     <div className="App">
       {console.log('inside return', ShowEmployees)}
@@ -89,16 +101,19 @@ function App() {
             <Employee key="2" name="MartinGarrix" role="DJ" />
             <Employee key="3" name="Marshmello" role={role} />
           */}
-          
+
             {employees.map((employee) => {
               console.log(employee);
               console.log("UUIUD DATA", uuidv4());
               return (
-                <div key={uuidv4()} className="mx-auto"> {/* Center each Employee */}
+                <div  className="mx-auto"> {/* Center each Employee */}
                   <Employee
+                    key={employee.id}
+                    id={employee.id}
                     name={employee.name}
                     role={employee.role}
-                    img={employee.img} 
+                    img={employee.img}
+                    updateEmployee={updateEmployee} 
                   />
                 </div>
               );
