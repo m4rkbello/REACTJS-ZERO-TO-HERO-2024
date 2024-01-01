@@ -43,6 +43,24 @@ function App() {
         role: 'Robot',
         img: 'https://images.pexels.com/photos/2060951/pexels-photo-2060951.jpeg'
       },
+      {
+        id: 3,
+        name: 'Marshmello',
+        role: 'DJ',
+        img: 'https://images.pexels.com/photos/3064620/pexels-photo-3064620.jpeg'
+      },
+      {
+        id: 4,
+        name: 'Paul Jorge',
+        role: 'MAOY',
+        img: 'https://images.pexels.com/photos/2180882/pexels-photo-2180882.jpeg'
+      },
+      {
+        id: 5,
+        name: 'Kawhi Leonard',
+        role: 'Robot',
+        img: 'https://images.pexels.com/photos/2060951/pexels-photo-2060951.jpeg'
+      },
     ]
   );
 
@@ -54,7 +72,7 @@ function App() {
 
 
    
-          <div className="flex flex-wrap justify-center">
+          <div className="flex flex-wrap">
           <input type="text" onChange={(e) => {
             console.log(e.target.value);
             setRole(e.target.value);
@@ -76,17 +94,15 @@ function App() {
               console.log(employee);
               console.log("UUIUD DATA", uuidv4());
               return (
-                <Employee
-                  // key={employee.id} 
-                  key={uuidv4()} 
-                  name={employee.name}
-                  role={employee.role}
-                  img={employee.img} 
-                />
+                <div key={uuidv4()} className="mx-auto"> {/* Center each Employee */}
+                  <Employee
+                    name={employee.name}
+                    role={employee.role}
+                    img={employee.img} 
+                  />
+                </div>
               );
-              
             })}
-       
        
           </div>
 
