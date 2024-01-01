@@ -4,6 +4,7 @@ import { useState } from 'react';
 //uuid universal unique identifier id
 import { v4 as uuidv4 } from 'uuid';
 import AddEmployee from './components/AddEmployee';
+import EditEmployee from './components/EditEmployee';
 
 
 function App() {
@@ -67,6 +68,7 @@ function App() {
 
   //updateEmployeeFunction 
   function updateEmployee(id, newName, newRole) {
+
     const updatedEmployees = employees.map((employee) => {
       if (id == employee.id) {
         //new employee
@@ -84,7 +86,7 @@ function App() {
     //parse
     const newId = lastId + 1;
 
-  
+
     const newEmployee = {
       id: newId,
       name: name,
@@ -101,26 +103,15 @@ function App() {
         <div>
           <div className="flex flex-wrap">
 
-            {/*
-               <input type="text" onChange={(e) => {
-            console.log(e.target.value);
-            setRole(e.target.value);
-          }} />
-            <Employee className="mx-2" key="1" name="M4rk" role="tig lung-ag" />
-            <Employee key="2" name="MartinGarrix" role="DJ" />
-            <Employee key="3" name="Marshmello" role={role} />
-            <Employee className="mx-2" key="1" name="M4rk" role="tig lung-ag" />
-            <Employee key="2" name="MartinGarrix" role="DJ" />
-            <Employee key="3" name="Marshmello" role={role} />
-            <Employee key="3" name="Marshmello" role={role} />
-            <Employee className="mx-2" key="1" name="M4rk" role="tig lung-ag" />
-            <Employee key="2" name="MartinGarrix" role="DJ" />
-            <Employee key="3" name="Marshmello" role={role} />
-          */}
-
             {employees.map((employee) => {
               console.log(employee);
               console.log("UUIUD DATA", uuidv4());
+              const editEmployee = <EditEmployee
+              id={employee.id}
+              name={employee.name}
+              role={employee.role}
+              updateEmployee={updateEmployee}
+            />
               return (
                 <div className="mx-auto"> {/* Center each Employee */}
                   <Employee
@@ -129,7 +120,7 @@ function App() {
                     name={employee.name}
                     role={employee.role}
                     img={employee.img}
-                    updateEmployee={updateEmployee}
+                    editEmployee={editEmployee}
                   />
                 </div>
               );
