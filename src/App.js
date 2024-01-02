@@ -6,17 +6,16 @@ function App() {
 
   return (
 
-    <Header>
     <Router>
-    <Routes>
-    <Route path='/employees' exact element={<Employees />} />
-
-    </Routes>
+      <Header>
+        <Routes>
+          <Route path='/employees' exact element={<Employees />} />
+        </Routes>
+      </Header>
     </Router>
- 
-    </Header>
+
   );
-  
+
 };
 
 export default App;
