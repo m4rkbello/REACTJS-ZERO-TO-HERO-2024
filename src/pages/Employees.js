@@ -20,46 +20,46 @@ function Employees() {
         id: 1,
         name: 'M4rk Bello',
         role: 'tig lung-ag',
-        img: 'https://picsum.photos/200/300/?blur'
+        img: 'https://images.pexels.com/photos/1386608/pexels-photo-1386608.jpeg'
       },
       {
         id: 2,
         name: 'Martin Garrix',
         role: 'DJ',
-        img: 'https://images.pexels.com/photos/2092474/pexels-photo-2092474.jpeg'
+        img: 'https://images.pexels.com/photos/1485031/pexels-photo-1485031.jpeg'
       },
       {
         id: 3,
         name: 'Marshmello',
         role: 'DJ',
-        img: 'https://images.pexels.com/photos/3064620/pexels-photo-3064620.jpeg'
+        img: 'https://images.pexels.com/photos/3119736/pexels-photo-3119736.jpeg'
       },
       {
         id: 4,
         name: 'Paul Jorge',
         role: 'MAOY',
-        img: 'https://images.pexels.com/photos/2180882/pexels-photo-2180882.jpeg'
+        img: 'https://images.pexels.com/photos/921647/pexels-photo-921647.jpeg'
       },
       {
         id: 5,
         name: 'Kawhi Leonard',
         role: 'Robot',
-        img: 'https://images.pexels.com/photos/2060951/pexels-photo-2060951.jpeg'
+        img: 'https://images.pexels.com/photos/1468380/pexels-photo-1468380.jpeg'
       },
       {
-        id: 3,
+        id: 6,
         name: 'Marshmello',
         role: 'DJ',
-        img: 'https://images.pexels.com/photos/3064620/pexels-photo-3064620.jpeg'
+        img: 'https://images.pexels.com/photos/4672501/pexels-photo-4672501.jpeg'
       },
       {
-        id: 4,
+        id: 7,
         name: 'Paul Jorge',
         role: 'MAOY',
-        img: 'https://images.pexels.com/photos/2180882/pexels-photo-2180882.jpeg'
+        img: 'https://images.pexels.com/photos/582039/pexels-photo-582039.jpeg'
       },
       {
-        id: 5,
+        id: 8,
         name: 'Kawhi Leonard',
         role: 'Robot',
         img: 'https://images.pexels.com/photos/2060951/pexels-photo-2060951.jpeg'
