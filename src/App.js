@@ -11,6 +11,8 @@ function App() {
         <Routes>
           <Route path='/employees' exact element={<Employees />} />
           <Route path='/employees' exact element={<Employees />} />
+          <Route path='/employees' exact element={<Employees />} />
+          <Route path='/employees' exact element={<Employees />} />
         </Routes>
       </Header>
     </Router>
