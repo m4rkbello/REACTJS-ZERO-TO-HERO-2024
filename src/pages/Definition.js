@@ -5,6 +5,8 @@ import NotFound from "../components/NotFound";
 export default function Definition() {
   const [word, setWord] = useState([]);
   const [notFound, setNotFound] = useState(false);
+  const [error401, setError401] = useState(false);
+
   console.log(useParams());
   let { search } = useParams();
   const navigate = useNavigate();
@@ -12,12 +14,20 @@ export default function Definition() {
 
   useEffect(() => {
     console.log('Page Loaded!');
+
+    // fetch('https://httpstat.us/' + search)  
     fetch('https://api.dictionaryapi.dev/api/v2/entries/en/' + search)
       .then((response) => {
-        if (response.status === 400) {
+        console.log(response.status);
+        if (response.status === 404) {
           setNotFound(true);
           console.log(response.status);
+        }else if(response.status === 401){
+          setError401(true);
+        }else if(response.status === 500){
+          navigate('/employees');
         }
+
         return response.json();
       })
       .then((data) => {
@@ -32,7 +42,7 @@ export default function Definition() {
         console.error('Error fetching data:', error);
         setNotFound(true);
       });
-  }, [search]);
+  }, []);
 
   if (notFound === true) {
     return (
