@@ -8,15 +8,15 @@ export default function Dictionary() {
 
 
     return (
-        <div>
+        <form
+            onSubmit={() => {
+                navigate('/definition/' + word)
+            }} >
             <input type="text" onChange={(e) => {
                 setWord(e.target.value);
             }} />
-            <button onClick={() => {
-                console.log("CLICKED SEARCH");
-                navigate('/definition/' + word)
-            }}>Search</button>
-        </div>
+            <button>Search</button>
+        </form>
   
     )
 
